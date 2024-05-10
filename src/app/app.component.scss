@@ -1,0 +1,18 @@
+button {
+    margin: 0 4px;
+    border: 2px solid black; /* Adding a black border */
+    background-color: white;
+    color: rgb(66, 139, 202);
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+button:hover {
+    background-color: #0056b3;
+    color: white; /* Optional: change text color on hover for better visibility */
+}
+  
+button:active {
+    background-color: rgb(66, 139, 202);
+    color: white; /* Optional: change text color on active for better visibility */
+}

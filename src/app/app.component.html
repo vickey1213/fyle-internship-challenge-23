@@ -1,5 +1,84 @@
-<div class="grid h-screen place-items-center">
-  <div class="font-bold text-3xl">
-    Fyle Internship Challenge
+<div style="margin-left: auto; margin-right: auto; max-width: 1200px; padding: 50px;">
+  <div style="display: flex; align-items: center; justify-content: space-between; width: 400px;">
+    <div>
+      <img [src]="user.avatar_url" alt="{{ user.name }} Avatar"
+         style="height: 200px; width: 200px; border-radius: 50%;">
+    </div>
+    <div>
+      <div>
+        <h3>{{ user.name }}</h3>  <!-- Dynamically display the user's name -->
+      </div>
+      <div>
+        <p>{{ user.bio || 'Your Bio' }}</p> <!-- Show bio if available, otherwise a placeholder -->
+      </div>
+      <div style="display: flex; align-items: center;">
+        <img src="../assets/location.svg" alt="Descriptive Alt Text"
+             style="height: 20px; width: 20px; margin-right: 5px;">
+        <p>{{ user.location || 'No Location Available' }}</p> <!-- Show location if available -->
+      </div>
+      <div>
+        <p>Twitter: <a href="{{ user.twitter_username ? 'https://twitter.com/' + user.twitter_username : '#' }}" target="_blank">{{ user.twitter_username || 'No Twitter' }}</a></p>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; align-items: center; justify-content: space-between; width: 220px; padding: 20px;">
+    <img src="../assets/link.svg" alt="Descriptive Alt Text"
+         style="height: 20px; width: 20px;">
+    <p><a href="https://github.com/{{ user.login }}" target="_blank">https://github.com/{{ user.login }}</a></p>
+  </div>
+
+  
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 20px;">
+ 
+  <div *ngFor="let card of cards" style="width: 100%; border: 1px solid #ccc; border-radius: 8px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <h2 style="color: rgb(60,137,204);">{{ card.title }}</h2>
+    <p>{{ card.description }}</p>
+    <div style="display: flex; align-items: center; gap: 10px; margin-top: 20px;">
+      <span *ngFor="let item of card.content" style="background-color: rgb(66, 139, 202); padding: 5px 10px; border-radius: 5px; color: white;">
+        {{ item }}
+      </span>
+    </div>
   </div>
 </div>
+<div>
+</div>
+
+<div style="margin-top: 20px;">
+  <div style="margin-top: 20px; display: flex; align-items: center; justify-content: center;">
+    <button style="padding: 5px 10px; display: flex; align-items: center; justify-content: center; width: 50px; height: 40px;">
+      <img src="assets/left_icon.svg" alt="Previous" style="width: 20px; height: auto;">
+    </button>
+    <button style="padding: 5px 10px; width: 50px; height: 40px;">1</button>
+    <button style="padding: 5px 10px; width: 50px; height: 40px;">2</button>
+    <button style="padding: 5px 10px; width: 50px; height: 40px;">3</button>
+    <button style="padding: 5px 10px; width: 50px; height: 40px;">4</button>
+    <button style="padding: 5px 10px; width: 50px; height: 40px;">5</button>
+    <button style="padding: 5px 10px; width: 50px; height: 40px;">6</button>
+    <button style="padding: 5px 10px; width: 50px; height: 40px;">7</button>
+    <button style="padding: 5px 10px; width: 50px; height: 40px;">8</button>
+    <button style="padding: 5px 10px; width: 50px; height: 40px;">9</button>
+    <button style="padding: 5px 10px; width: 50px; height: 40px;">10</button>
+    <button style="padding: 5px 10px; display: flex; align-items: center; justify-content: center; width: 50px; height: 40px;">
+      <img src="assets/right_icon.svg" alt="Next" style="width: 20px; height: auto;">
+    </button>
+  </div>
+  
+  <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 30px;">
+    <button style="display: flex; align-items: center; justify-content: center; padding: 10px; color: rgb(153,153,153); border-radius: 10%">
+      <img src="assets/leftarrow.svg" alt="Older" style="width: 20px; height: 20px; border-radius: 100%;">
+      <span style="margin-left: 5px;">Older</span>
+    </button>
+    <button style="display: flex; align-items: center; justify-content: center; padding: 10px; border-radius: 10%">
+      <img src="assets/rightarrow.svg" alt="Newer" style="width: 20px; height: 20px; border-radius: 100%;">
+      <span style="margin-left: 5px;">Newer</span>
+    </button>
+  </div>
+  
+  
+
+
+  
+</div>
+
+
+  
